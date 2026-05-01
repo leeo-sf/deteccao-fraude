@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FraudDetection.Api/FraudDetection.Api.csproj" />
+    <Project Path="src/FraudDetection.Domain/FraudDetection.Domain.csproj" />
+    <Project Path="src/FraudDetection.Ioc/FraudDetection.Ioc.csproj" />
+    <Project Path="src/FraudDetection.Shared/FraudDetection.Shared.csproj" />
+  </Folder>
+</Solution>
