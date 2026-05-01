@@ -1,6 +1,3 @@
 ﻿namespace FraudDetection.Domain;
 
-public class Class1
-{
-
-}
+public record DomainAssembly();

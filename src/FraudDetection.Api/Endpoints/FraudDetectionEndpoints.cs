@@ -1,5 +1,6 @@
 ﻿using FraudDetection.Shared.Request;
 using FraudDetection.Shared.Response;
+using MediatR;
 
 namespace FraudDetection.Api.Endpoints;
 
@@ -17,9 +18,9 @@ internal static class FraudDetectionEndpoints
             .Produces<FraudScoreResponse>(StatusCodes.Status200OK);
     }
 
-    private static async ValueTask<IResult> ReadyAsync() =>
-        Results.NoContent();
+    private static async ValueTask<IResult> ReadyAsync(IMediator mediator) =>
+        await mediator.SendCommand(new ReadyForRunRequest(), StatusCodes.Status204NoContent);
 
-    private static async ValueTask<IResult> FraudScoreAsync(FraudScoreRequest request) =>
-        Results.Ok();
+    private static async ValueTask<IResult> FraudScoreAsync(IMediator mediator, FraudScoreRequest request) =>
+        await mediator.SendCommand(request, StatusCodes.Status200OK);
 }

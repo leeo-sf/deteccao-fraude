@@ -1,9 +1,12 @@
 ﻿using FraudDetection.Shared.Dto;
+using FraudDetection.Shared.Response;
+using MediatR;
+using OperationResult;
 using System.Text.Json.Serialization;
 
 namespace FraudDetection.Shared.Request;
 
-public record FraudScoreRequest
+public record FraudScoreRequest : IRequest<Result<FraudScoreResponse>>
 {
     /// <summary>
     /// Identificador da transação

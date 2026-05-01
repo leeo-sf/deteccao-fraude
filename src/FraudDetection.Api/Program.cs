@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureOpenApi();
 builder.Services.ConfigureOptions<ConfigureKestrelOptions>();
+builder.Services.ConfigureMediatr();
 
 var app = builder.Build();
 
